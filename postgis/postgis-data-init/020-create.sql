@@ -24,9 +24,7 @@ create or replace function public.geo_landmarks(
     latitude double precision,
     longitude double precision,
     radius integer
-)
-returns setof public.landmarks
-language sql stable as $$
+) returns setof public.landmarks as $$
 
     select 
         id,
@@ -54,4 +52,4 @@ language sql stable as $$
         name asc
     ;
 
-$$;
+$$ language sql stable;
