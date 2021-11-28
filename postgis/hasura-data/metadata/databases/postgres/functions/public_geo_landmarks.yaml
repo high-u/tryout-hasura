@@ -1,0 +1,3 @@
+function:
+  name: geo_landmarks
+  schema: public

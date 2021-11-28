@@ -1,7 +1,7 @@
 version: '3.6'
 services:
   postgres:
-    image: postgis/postgis:12-master
+    image: postgis/postgis:14-3.1-alpine
     restart: always
     volumes:
       - db_data:/var/lib/postgresql/data
@@ -17,7 +17,7 @@ services:
       - "postgres"
     restart: always
     environment:
-      # HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:password@postgres:5432/postgres
+      HASURA_GRAPHQL_DATABASE_URL: postgres://postgres:password@postgres:5432/postgres
       HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
       HASURA_GRAPHQL_DEV_MODE: "true"
       HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log

@@ -6,3 +6,4 @@
       isolation_level: read-committed
       use_prepared_statements: false
   tables: "!include postgres/tables/tables.yaml"
+  functions: "!include postgres/functions/functions.yaml"

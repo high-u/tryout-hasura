@@ -1,0 +1,3 @@
+table:
+  name: landmarks
+  schema: public
