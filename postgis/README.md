@@ -25,8 +25,7 @@ hasura metadata export
 ## Boot up hasura
 
 ```bash
-docker compose up
-# docker compose down -v
+docker compose up -d
 ```
 
 ## GraphQL Query
@@ -36,8 +35,16 @@ docker compose up
 Query
 
 ```graphql
-query MyQuery($latitude: float8 = "", $longitude: float8 = "", $radius: Int = 100) {
-  geo_landmarks(args: {latitude: $latitude, longitude: $longitude, radius: $radius}) {
+query landmarksIncludedInCircle(
+  $latitude: float8 = "",
+  $longitude: float8 = "",
+  $radius: Int = 100
+) {
+  landmarks: geo_landmarks(args: {
+    latitude: $latitude,
+    longitude: $longitude,
+    radius: $radius
+  }) {
     id
     name
     location
